@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Blog App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyBlog</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#posts">Posts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-text">
+            <h1>Welcome to My Blog</h1>
+            <p>Insights, Stories, and Inspiration</p>
+        </div>
+    </header>
+
+    <section class="featured-posts" id="featured">
+        <h2>Featured Posts</h2>
+        <div class="featured-container">
+            <div class="featured-card">Featured Post 1</div>
+            <div class="featured-card">Featured Post 2</div>
+            <div class="featured-card">Featured Post 3</div>
+        </div>
+    </section>
+
+    <section class="posts-section" id="posts">
+        <h2>Latest Posts</h2>
+        <div class="posts-container">
+            <div class="post-card">
+                <h3>Post Title 1</h3>
+                <p>Post summary goes here...</p>
+            </div>
+            <div class="post-card">
+                <h3>Post Title 2</h3>
+                <p>Post summary goes here...</p>
+            </div>
+            <div class="post-card">
+                <h3>Post Title 3</h3>
+                <p>Post summary goes here...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 MyBlog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
