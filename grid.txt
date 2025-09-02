@@ -1,0 +1,95 @@
+The CSS grid layout is a game-changing tool for creating complex layouts for your websites. But what exactly is a grid layout? A very basic grid could look like that, and a more complex one, containing the most important parts of a website, could look like this. In general, grids consist of columns and rows.
+
+And this is some basic code for creating a grid with CSS. To enable the grid layout for a container, we have to set the display property to grid. And then if we set grid-template-columns to 3x50px, we are creating a grid with 3 columns, which are 50px in size.
+
+And now let's jump into the code and have a look at the details. But before we start, please make sure to hit the like button and subscribe to the channel so we can help even more people learning about the CSS grid layout. Okay, so let's get started.
+
+As always, I have prepared a simple HTML file for you, which only consists of 9 different containers. And we want to create a grid for the containers now. So to enable the grid, we have to set the display property to grid.
+
+Okay, but as you can see, nothing has changed in the browser, because we haven't defined any columns or rows yet. So let's use the grid-template-columns property to define columns. We start out with a single column, which is 150px wide. And as you can see, the width of the column changes to 150px.
+
+Let's define a second column, which is 100px in size. And as you can see in the browser, now we have two columns. And the containers are placed into the columns automatically.
+
+Let's add a third column, and this time it should be 100px again. Great! Now have a look at the browser and you will see that our three columns will appear according to our code.
+
+We have only worked with pixel values so far, but we can also use percentage values for defining our columns. Let's try it out by creating three columns, which have a size of 33% each.
+
+Similar to the grid-template-columns property, the grid-template-rows property works to define the sizes of rows. Check it out, we have just set the size of the first row to 200px. Let's continue and set the second row to 100px and the third row to 200px.
+
+The min-max function can help us creating grids which are responsive. That means that the size of a column or row adjusts to the available screen size. The min-max function takes two arguments:
+
+
+
+
+
+The first one defines the minimum size.
+
+
+
+The second one the maximum size.
+
+Setting the maximum size to auto will make the column grow infinitely. Now let's have a look what will happen if we change the size of the browser window. We decrease the size of the window and the column will shrink until it reaches the 100px minimum size.
+
+Next let's try out the min-max function for the rows and let's set the minimum size of the first row to 200px and the maximum size to auto again. To make that work we have to set the height of the container to 100%. When we decrease the height of the browser window now, we will see that the first row will shrink until it reaches its minimum size of 200px.
+
+The repeat function is another very helpful tool we can use for creating our grids. The repeat function also has two arguments:
+
+
+
+
+
+The first one defines how many times we want to repeat a row or column.
+
+
+
+The second argument defines the size.
+
+In this case we want to create three columns of 150px and three rows of 150px. Have a look at the browser and you will see that our containers are little squares now.
+
+So far we have only worked with pixel values and percentage values, but grids introduce a whole new unit to CSS, the so-called fraction unit. Using the fraction unit we can also create responsive grids similar to the min-max function. You can compare the fraction unit to the flex grow and shrink properties of the flex layout.
+
+Here we have created three columns, the first and second column are one fraction wide and the third column two fractions, so we have a total of four fractions. So two fractions is equal to 50% and one fraction is equal to 25%. And if we change the third value to four fractions, we will have a total of seven fractions, so one fraction will be approximately 14% and two fractions 28%.
+
+Next we're going to learn how to define gaps between the rows and columns of a grid. So I already have removed the margins from the containers, so we are ready to define the gaps now.
+
+To define the gaps between the rows of a grid, we have to use the grid row gap property. Let's set it to 50 pixels. And to achieve the same thing for the columns, we have to use the grid column gap property. And now have a look at the browser and you will see that we have gaps between the columns and the rows of our grid.
+
+The grid gap property allows us to create gaps for rows and columns with justa single property. The first value defines the gaps between the rows and the second defines the gaps between the columns of our grid. And defines the gaps between the columns of our grid. Aligning items with our grids works similar to the flex layout. We can align items within our grids. use the same properties like justify content and align content or align items and giving them values like space around, space between or space evenly to distribute our items across the screen. And the center value is used for centering our items of course.
+
+Up until now, all of our grid items are only taking up a single cell of the grid. But the CSS grid layout allows us to span items across multiple cells of the grid. Let's have a look at how to accomplish that.
+
+To make an item span multiple columns of the grid, we can use the grid column start property, which defines the column where the item should start and the grid column end property, which defines where the item should end. To make box 1 span the whole grid, we set the grid column start to 1 and grid column end to 4. But wait, why 4 and not 3? Our grid only has 3 columns. The answer to that is very simple. The values are not referring to the actual column, but to the column lines to the left and right of the columns. Have a look at the browser and the numbers on top of the grid. They are indicating the column lines. So now the values 1 and 4 for grid column start and grid column end make sense, right?
+
+Now we want to repeat that, but this time we want to span the item across multiple rows. So we set the grid row start property to 2 and the grid row end property to 6. Have a look at the grid and the row line numbers and you will see that box 2 spans from row line 2 to 6.
+
+Defining grid column start and grid column end with just a single property is also possible by using grid column. It has two values separated with a slash, where the first one is grid column start and the second one is grid column end. And of course we can do the same thing with grid row and it works just the same way like grid column. Two values separated by a slash. We can even take it to the next level by combining all four values into a single property: the grid area property. The first two values represent grid row start and grid column start and the last two values represent grid row end and grid column end.
+
+Next let's practice another very cool feature of the CSS grid layout. I'm talking about grid template areas. I have prepared four different containers for you representing the main layout parts of a typical website: header, content, sidebar and footer. And now we are going to learn how to use grid template areas to position the containers in a grid.
+
+The grid template areas property takes a single string for each row of the grid. And inside of the row we define the columns which are separated by a space. We can give the columns any name we want, basically similar to setting an ID to an HTML element. We want to create a two column grid and we want the header to span the two columns so we write:
+
+
+
+
+
+header space header.
+
+In the second row we want to display the content to the left and the sidebar to the right so we write:
+
+
+
+
+
+content space sidebar.
+
+And in the third row we want the footer to span two columns just like the header so we write:
+
+
+
+
+
+footer space footer.
+
+But before our grid template areas will work we have to define the areas to each of the containers. Let's start with the header and set the grid area property to header and repeat the step for content, sidebar and footer. And as you can see our grid will take up the shape just as we have defined it with the grid template area property. Header and footer take up two columns whereas content and sidebar share a single row.
+
+Okay we have reached the end of this video. Thank you for watching. I hope you liked it and learned a lot about the CSS grid layout today. To support my work please hit the like button and subscribe to the channel. To not miss any content.
